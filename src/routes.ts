@@ -1,11 +1,9 @@
 import { Router } from "express";
 
-import {sendNotification} from "./controllers/Notifications.config";
+import { SendNotification } from "./handlers"
 
 const routes = Router()
 
-routes.post('/', (req, res) => {
-    sendNotification(req.body)
-})
+routes.post('/sendNotification',SendNotification)
 
 export default routes
